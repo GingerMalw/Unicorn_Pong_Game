@@ -54,21 +54,22 @@ class Ball(Turtle):
         self.dx = 10
         self.dy = 10
 
-        # if self.ycor() > 290:
-        #     self.sety(290)
-        #     self.dy *= -1
-        #
-        # if self.xcor() > 390:
-        #     self.goto(0, 0)
-        #     self.dx *= -1
-        #
-        # if self.ycor() < -290:
-        #     self.sety(-290)
-        #     self.dy *= -1
-        #
-        # if self.xcor() < -390:
-        #     self.goto(0, 0)
-        #     self.dx *= -1
+    def check_boundarise(self):
+        if self.ycor() > 290:
+            self.sety(290)
+            self.dy *= -1
+
+        if self.xcor() > 390:
+            self.goto(0, 0)
+            self.dx *= -1
+
+        if self.ycor() < -290:
+            self.sety(-290)
+            self.dy *= -1
+
+        if self.xcor() < -390:
+            self.goto(0, 0)
+            self.dx *= -1
 
 
 # class ScoreTab():
