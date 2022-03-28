@@ -1,22 +1,30 @@
-import turtle
+from turtle import Screen, Turtle
 
 
-class PongScreen:
-    def __init__(self):
-        self = turtle.Screen()
-        self.title("@@ Unicorn Pong @@")
-        self.bgcolor("#f5cac3")
-        self.bgpic("unicorn.gif")
-        self.setup(width=800, height=600)
-        self.tracer(0)
-        while True:
-            self.update()
+def setup_screen():
+    sc = Screen()
+    sc.title("@@ Unicorn Pong @@")
+    sc.bgcolor("#f5cac3")
+    sc.bgpic("unicorn.gif")
+    sc.setup(width=800, height=600)
+    return sc
+
+# class PongScreen(Screen):
+#     def __init__(self):
+#         super().__init__()
+#         self.title("@@ Unicorn Pong @@")
+#         self.bgcolor("#f5cac3")
+#         self.bgpic("unicorn.gif")
+#         self.setup(width=800, height=600)
+#         self.tracer(0)
+        # while True:
+        #     self.update()
 
 
 # not working :(
-class Racquet:
-    def create_rac(self, x, y):
-        self = turtle.Turtle
+class Racquet(Turtle):
+    def __init__(self, x, y):
+        super().__init__()
         self.speed(0)
         self.shape(name="square")
         self.shapesize(stretch_wid=5, stretch_len=0.5, outline=None)
@@ -35,32 +43,32 @@ class Racquet:
         return self.sety(y)
 
 
-class Ball:
+class Ball(Turtle):
     def __init__(self):
-        self = turtle.Turtle()
+        super().__init__()
         self.speed(0)
         self.shape("circle")
         self.color("#f6bd60")
         self.penup()
         self.goto(0, 0)
-        self.dx = 0
-        self.dy = 0
+        self.dx = 10
+        self.dy = 10
 
-        if self.ycor() > 290:
-            self.sety(290)
-            self.dy *= -1
-
-        if self.xcor() > 390:
-            self.goto(0, 0)
-            self.dx *= -1
-
-        if self.ycor() < -290:
-            self.sety(-290)
-            self.dy *= -1
-
-        if self.xcor() < -390:
-            self.goto(0, 0)
-            self.dx *= -1
+        # if self.ycor() > 290:
+        #     self.sety(290)
+        #     self.dy *= -1
+        #
+        # if self.xcor() > 390:
+        #     self.goto(0, 0)
+        #     self.dx *= -1
+        #
+        # if self.ycor() < -290:
+        #     self.sety(-290)
+        #     self.dy *= -1
+        #
+        # if self.xcor() < -390:
+        #     self.goto(0, 0)
+        #     self.dx *= -1
 
 
 # class ScoreTab():
