@@ -72,6 +72,8 @@ class Ball(Turtle):
             self.dx *= -1
 
 
+
+
 # class ScoreTab():
 #     def __init__(self, score_a, score_b):
 #         self = turtle.Turtle()
