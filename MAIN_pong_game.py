@@ -7,10 +7,11 @@ rac_b = Racquet(350, 0)
 
 ball = Ball()
 
-
-
 # Scores
-# scores = ScoreTab(0, 0)
+# scores = ScoreTab(0,0)
+# score_a = 0
+# score_b = 0
+
 
 #  Moving Racquets
 screen.listen()
@@ -28,22 +29,22 @@ while True:
     ball.sety(ball.ycor() + ball.dy)
 
     # Borders
-    if ball.ycor() > 290:
-        ball.sety(290)
+    if ball.ycor() > 300:
+        ball.sety(300)
         ball.dy *= -1
 
-    if ball.xcor() > 390:
+    if ball.xcor() > 365:
         ball.goto(0, 0)
         ball.dx *= -1
         # score_a += 1
         # scores.clear()
         # scores.write(f"PLAYER 1: {score_a}        PLAYER 2: {score_b} ", align="center", font=("Curier", 24, "normal"))
 
-    if ball.ycor() < -290:
-        ball.sety(-290)
+    if ball.ycor() < -300:
+        ball.sety(-300)
         ball.dy *= -1
 
-    if ball.xcor() < -390:
+    if ball.xcor() < -365:
         ball.goto(0, 0)
         ball.dx *= -1
         # score_b += 1
@@ -51,11 +52,11 @@ while True:
         # scores.write(f"PLAYER 1: {score_a}        PLAYER 2: {score_b} ", align="center", font=("Curier", 24, "normal"))
 
     # collision
-    if 350 > ball.xcor() > 340 \
-            and (ball.ycor() < rac_b.ycor() + 40) and (ball.ycor() > rac_b.ycor() - 40):
+    if 345 > ball.xcor() >= 340 \
+            and (ball.ycor() < (rac_b.ycor() + 40)) and (ball.ycor() > (rac_b.ycor() - 40)):
         ball.dx *= -1
 
-    if -350 > ball.xcor() < -340 \
-            and (ball.ycor() < rac_a.ycor() + 40) and (ball.ycor() > rac_a.ycor() - 40):
+    if -340 > ball.xcor() <= -345 \
+            and (ball.ycor() < (rac_a.ycor() + 40)) and (ball.ycor() > (rac_a.ycor() - 40)):
         ball.dx *= -1
 

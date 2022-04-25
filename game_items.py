@@ -1,3 +1,4 @@
+import turtle
 from turtle import Screen, Turtle
 
 
@@ -21,7 +22,6 @@ def setup_screen():
         #     self.update()
 
 
-# not working :(
 class Racquet(Turtle):
     def __init__(self, x, y):
         super().__init__()
@@ -46,7 +46,7 @@ class Racquet(Turtle):
 class Ball(Turtle):
     def __init__(self):
         super().__init__()
-        self.speed(0)
+        self.speed(0.3)
         self.shape("circle")
         self.color("#f6bd60")
         self.penup()
@@ -54,27 +54,25 @@ class Ball(Turtle):
         self.dx = 10
         self.dy = 10
 
-    def check_boundarise(self):
-        if self.ycor() > 290:
-            self.sety(290)
-            self.dy *= -1
-
-        if self.xcor() > 390:
-            self.goto(0, 0)
-            self.dx *= -1
-
-        if self.ycor() < -290:
-            self.sety(-290)
-            self.dy *= -1
-
-        if self.xcor() < -390:
-            self.goto(0, 0)
-            self.dx *= -1
-
-
+    # def check_board(self):
+    #     if self.ycor() > 290:
+    #         self.sety(290)
+    #         self.dy *= -1
+    #
+    #     if self.xcor() > 390:
+    #         self.goto(0, 0)
+    #         self.dx *= -1
+    #
+    #     if self.ycor() < -290:
+    #         self.sety(-290)
+    #         self.dy *= -1
+    #
+    #     if self.xcor() < -390:
+    #         self.goto(0, 0)
+    #         self.dx *= -1
 
 
-# class ScoreTab():
+# class ScoreTab(Turtle):
 #     def __init__(self, score_a, score_b):
 #         self = turtle.Turtle()
 #         self.speed(0)
